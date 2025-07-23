@@ -32,8 +32,8 @@ else
   gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 fi
 
-# Trigger alacritty config reload
-touch "$HOME/.config/alacritty/alacritty.toml"
+# Trigger ghostty config reload
+touch "$HOME/.config/ghostty/config"
 
 # Trigger btop config reload
 pkill -SIGUSR2 btop

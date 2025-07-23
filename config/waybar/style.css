@@ -38,6 +38,14 @@
   margin: 0 7.5px;
 }
 
+#custom-vpn {
+  min-width: 12px;
+  margin: 0 7.5px;
+  padding-left: 2px;
+  padding-right: 2px;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 #custom-expand-icon {
   margin-right: 12px;
 }

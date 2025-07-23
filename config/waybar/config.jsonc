@@ -14,6 +14,7 @@
     "group/tray-expander",
     "bluetooth",
     "network",
+    "custom/vpn",
     "pulseaudio",
     "cpu",
     "battery"
@@ -42,10 +43,18 @@
       "5": []
     }
   },
+  "custom/vpn": {
+    "interval": 3,
+    "format": "{}",
+    "exec": "ip add show | grep -qF wg0-mullvad && echo 🔒 Connected || echo 🔓 Disconnected",
+    "max-length": "100",
+    "on-click": "mullvad connect",
+    "on-click-right": "mullvad disconnect"
+  },
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "alacritty -e btop"
+    "on-click": "ghostty -e btop"
   },
   "clock": {
     "format": "{:%A %H:%M}",
@@ -63,7 +72,6 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "nospacing": 1,
-    "on-click": "alacritty --class=Impala -e impala"
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -96,7 +104,7 @@
   },
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "alacritty --class=Wiremix -e wiremix",
+    "on-click": "ghostty --class=Wiremix -e wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
